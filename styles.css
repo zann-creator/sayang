@@ -1,0 +1,69 @@
+/* Menata latar belakang */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Membuat bentuk hati */
+.heart {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transform: rotate(-45deg);
+  animation: heartbeat 1s infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.heart:before {
+  top: -50px;
+  left: 0;
+}
+
+.heart:after {
+  top: 0;
+  left: 50px;
+}
+
+h1 {
+  color: #ff0000;
+  font-size: 2.5em;
+}
+
+p {
+  color: hsl(0, 96%, 50%);
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+/* Animasi detak jantung */
+@keyframes heartbeat {
+  0%, 100% {
+      transform: scale(1) rotate(-45deg);
+  }
+  50% {
+      transform: scale(1.2) rotate(-45deg);
+  }
+}
